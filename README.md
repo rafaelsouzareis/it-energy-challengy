@@ -8,7 +8,7 @@ Início: 29/04/2024
 
 Término: 02/05/2024
 
-***O termo "challengy" referido no diretório se refere à challenge-energy***
+***O termo "challengy" do repositório se refere à challenge-energy***
 
 
 ### Introdução
@@ -56,7 +56,7 @@ view_df: pd.DataFrame = pd.DataFrame(
         ]).sort_values(by='forecasted_date', ascending=True)
 ```
 
-+ A função ***plot_precipitation_data** recebe um DataFrame de precipitação, organiza os dados por data prevista, e cria dois gráficos: um mostrando a precipitação diária e outro a precipitação acumulada.
++ A função ***plot_precipitation_data*** recebe um DataFrame de precipitação, organiza os dados por data prevista, e cria dois gráficos: um mostrando a precipitação diária e outro a precipitação acumulada.
 
 ### Resultados
 Com base nos dados processados nos arquivos do diretório ***forecast_files***, chegamos na precipitação diária e acumulada do desafio, confome a figura abaixo.
