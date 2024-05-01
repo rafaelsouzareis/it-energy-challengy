@@ -31,7 +31,7 @@ def apply_contour(contour_df: pd.DataFrame, data_df: pd.DataFrame) -> pd.DataFra
 
 A imagem foi criada para demonstrar a localização da Usina Hidrelétrica Camargos dentro da malha de dados de preciptação. Ela mostra claramente quais pontos da malha estão contidos na região da usina. Com isso, podemos precisamente analisar e quantificar a precipitação diária específica para essa região. ***(o código para gerar a imagem está como comentário na função apply_contour vista anteriormente)***
 
-![Contorno de Camargos [Grande]](carmagos_grande_malha_contorno.png "Contorno de Carmargos")
+![Contorno de Camargos [Grande]](carmagos_grande_malha_contorno.PNG "Contorno de Carmargos")
 
 ### Tratamento e visualização de dados
 + A função ***list_files_in_directory*** lista arquivos em um diretório especificado e os organiza em um DataFrame do pandas. Ela utiliza expressões regulares para filtrar os arquivos com base em um padrão fornecido ***ETA40_p(\d{6})a(\d{6})\.dat***, permitindo a identificação e extração de datas específicas dos nomes dos arquivos. Os dados extraídos incluem o nome do arquivo completo e as datas formatadas, armazenados em colunas ***file_name***, ***forecast_date*** e ***forecasted_date***. A função também possui tratamento de erros para lidar com exceções como diretórios inacessíveis ou nomes de arquivos que não correspondem ao padrão esperado, garantindo que a função retorne um DataFrame vazio em caso de erro e exiba uma mensagem de erro relevante.
@@ -55,7 +55,7 @@ view_df: pd.DataFrame = pd.DataFrame(
 ### Resultados
 Com base nos dados processados nos arquivos do diretório ***forecast_files***, chegamos na precipitação diária e acumulada do desafio, confome a figura abaixo.
 
-![Precipitação Contorno de Camargos [Grande]](resultado.png "Precipitação Contorno de Carmargos")
+![Precipitação Contorno de Camargos [Grande]](resultado.PNG "Precipitação Contorno de Carmargos")
 
 ### Melhorias e otimização
 Embora a utilização de operações vetorizadas através das bibliotecas ***GeoPandas*** e ***Shapely*** ofereça uma maneira eficiente e poderosa de manipular dados geográficos, como a criação de hulls convexos e outros cálculos geométricos, o processamento de grandes conjuntos de dados ainda pode resultar em consumo significativo de recursos e tempo computacional, em especial à geomtrias de contorno mais complexas. Para processar os arquivos de ***forecast_files***, o código demorou em torno de ***1 segundo (computador com baixo processamento)***, sendo um tempo de execução relativamente alto quando comparamos com a quantidade de arquivos processados. 
