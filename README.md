@@ -1,12 +1,18 @@
 # BTG Energy Challenge (RESOLUÇÃO DO DESAFIO)
 ### Informações
 Desafio: BTG Energy Challenge
+
 Nome: Rafael Souza dos Reis
+
 Início: 29/04/2024
+
 Término: 02/05/2024
 
+***O termo "challengy" referido no diretório se refere à challenge-energy***
+
+
 ### Introdução
-Na pasta ***forecast_files***, existem arquivos de previsão de precipitação do modelo meteorológico ETA, desenvolvido pelo INPE. Conforme explicado no arquivo README.md, os nomes dos arquivos seguem o padrão: ***ETA40_pddmmyyaddmmyy.dat***. Neste padrão, a primeira data indica o dia em que a previsão foi realizada e a segunda data representa o dia que a previsão se refere. Dentro dos arquivos temos os dados de latitude, longitude e o valor da precipitação. Por outro lado, existe um arquivo de contorno com coordenadas de latitude e longitude que precisa ser aplicado à malha de dados para determinar quais pontos estão contidos nessa região especificada, sendo esse o maior desafio do BTG Energy Challenge, pois envolve um problema de hull convexo. Em termos matemáticos, um hull convexo é a forma em que envolve um conjunto de pontos, que nesse caso é a área delimitada pelo contorno. 
+Na pasta ***forecast_files***, existem arquivos de previsão de precipitação do modelo meteorológico ETA, desenvolvido pelo INPE. Conforme explicado no arquivo README.md, os nomes dos arquivos seguem o padrão: ***ETA40_pddmmyyaddmmyy.dat***. Neste padrão, a primeira data indica o dia em que a previsão foi realizada e a segunda data representa o dia que a previsão se refere. Dentro dos arquivos temos os dados de latitude, longitude e o valor da precipitação. Por outro lado, existe um arquivo de contorno com coordenadas de latitude e longitude que precisa ser aplicado à malha de dados para determinar quais pontos estão contidos nessa região especificada, sendo esse o maior desafio do BTG Energy Challenge, pois envolve um problema de hull convexo. Em termos matemáticos, um hull convexo é uma forma geométrica que envolve um conjunto de pontos que, nesse caso, é a área delimitada pelo contorno. 
 
 ### Contorno na malha de precipitação
 Implementar e usar o polígono de contorno de maneira eficiente requer uma combinação de um algoritmo robusto e técnicas de programação que aproveitem as capacidades das operações vetoriazadas, pois dependendo da geometria do polígono, o cálculo pode ser complexo e demorado. Nesse caso, para a resolução do problema, utilizamos a biblioteca externa ***GeoPandas***, integrada a biblioteca ***Shapely***, que já possui métodos para calcular o hull convexo de um conjunto de pontos.
@@ -93,4 +99,4 @@ view_list: list = []
     view_df: pd.DataFrame = pd.DataFrame(view_list).sort_values(by='forecasted_date', ascending=True)
 ```
 
-Assim, conseguimos otimizar o código para processar o dados em ***0.3 segundos (computador com baixo processamento)***, diminuindo em 1/3 em relação ao código anterior. 
+Assim, conseguimos otimizar o código para processar o dados em ***0.3 segundos (computador com baixo processamento)***, diminuindo em 2/3 em relação ao código anterior. 
