@@ -100,3 +100,8 @@ view_list: list = []
 ```
 
 Assim, conseguimos otimizar o código para processar o dados em ***0.3 segundos (computador com baixo processamento)***, diminuindo em 2/3 em relação ao código anterior. 
+
+
+### Referências e Documentação
+***Biblioteca Shapely.polygons***: https://shapely.readthedocs.io/en/stable/reference/shapely.polygons.html#shapely.polygons
+***Biblioteca GeoDataFrame***: https://geopandas.org/en/stable/gallery/create_geopandas_from_pandas.html
